@@ -1,6 +1,10 @@
 config {
-  type: "declaration",
-  database: "bigquery-public-data",
-  schema: "stackoverflow",
-  name: "badges"
+  type: "operations",
+  name: "badges",
+  hasOutput: true
 }
+
+  LOAD DATA OVERWRITE ${self()}
+  FROM FILES (
+  format = 'CSV',
+  uris = ['gs://leonegre-dataform/badges*']);
