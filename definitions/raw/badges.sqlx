@@ -1,0 +1,9 @@
+config {
+  type: "operations",
+  name: "raw_badges"
+}
+
+LOAD DATA OVERWRITE `stackoverflow_raw`.`users`
+FROM FILES (
+  format = 'CSV',
+  uris = ['gs://leonegre-dataform/badges*']);
