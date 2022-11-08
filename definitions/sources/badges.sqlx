@@ -1,6 +1,6 @@
 config {
-  type: "declaration",
-  database: "leonegre-sandbox-337808",
-  schema: "dataform_stackoverflow",
+  type: "table",
   name: "badges"
 }
+
+SELECT * FROM ${ref("badges_gcs")}

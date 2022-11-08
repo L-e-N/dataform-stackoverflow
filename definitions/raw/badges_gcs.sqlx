@@ -1,9 +1,11 @@
 config {
   type: "operations",
-  name: "raw_badges"
+  name: "badges_gcs",
+  hasOutput: true
 }
 
-LOAD DATA OVERWRITE `stackoverflow_raw`.`badges`
-FROM FILES (
+
+  LOAD DATA OVERWRITE `stackoverflow_raw`.`badges`
+  FROM FILES (
   format = 'CSV',
   uris = ['gs://leonegre-dataform/badges*']);
