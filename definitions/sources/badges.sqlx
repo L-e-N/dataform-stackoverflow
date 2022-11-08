@@ -1,6 +1,10 @@
 config {
-  type: "table",
-  name: "badges"
+  type: "operations",
+  name: "badges",
+  hasOutput: true
 }
 
-SELECT * FROM ${ref("badges_gcs")}
+  LOAD DATA OVERWRITE ${self()}
+  FROM FILES (
+  format = 'CSV',
+  uris = ['gs://leonegre-dataform/badges*']);
