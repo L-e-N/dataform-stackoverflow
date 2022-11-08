@@ -5,7 +5,7 @@ config {
 }
 
 
-  LOAD DATA OVERWRITE `stackoverflow_raw`.`badges`
+  LOAD DATA OVERWRITE `stackoverflow_raw`.`badges_gcs`
   FROM FILES (
   format = 'CSV',
   uris = ['gs://leonegre-dataform/badges*']);
